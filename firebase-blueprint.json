@@ -1,0 +1,51 @@
+{
+  "entities": {
+    "Ad": {
+      "title": "Ad",
+      "description": "A generated ad campaign script with hook and scenes",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The unique ID of the ad script record"
+        },
+        "userId": {
+          "type": "string",
+          "description": "The Firebase Auth user UID who owns this ad"
+        },
+        "title": {
+          "type": "string",
+          "description": "The custom title of the ad"
+        },
+        "rawText": {
+          "type": "string",
+          "description": "The original user's input script or idea"
+        },
+        "hook": {
+          "type": "string",
+          "description": "The generated hook segment"
+        },
+        "scenes": {
+          "type": "array",
+          "description": "Generated scenes list"
+        },
+        "speechPace": {
+          "type": "string",
+          "enum": ["fast", "normal", "slow"],
+          "description": "Speaking pacing speed"
+        },
+        "createdAt": {
+          "type": "number",
+          "description": "Creation timestamp in milliseconds"
+        }
+      },
+      "required": ["id", "userId", "title", "rawText", "hook", "scenes", "speechPace", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/ads/{adId}": {
+      "schema": "Ad",
+      "description": "Primary storage of user-authored and AI-generated script templates"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Detector de Escenas de Anuncios",
+  "description": "Una aplicación para analizar guiones de anuncios, detectar automáticamente el gancho (Hook) y las escenas, calcular la cantidad total y estimar la duración límite de 8 segundos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
